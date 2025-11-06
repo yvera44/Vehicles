@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.model;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,19 @@ public class Vehicle {
         private int numberOfPassengers;
         private int cargoCapacity;
         private int fuelCapacity;
-        private ArrayList<Integer> wheels = new ArrayList<>();
+        private ArrayList<Wheel> wheels;
+
+        public Vehicle(){
+
+        }
+
+    public Vehicle(String color, int numberOfPassengers, int cargoCapacity, int fuelCapacity, ArrayList<Wheel> wheels) {
+        this.color = color;
+        this.numberOfPassengers = numberOfPassengers;
+        this.cargoCapacity = cargoCapacity;
+        this.fuelCapacity = fuelCapacity;
+        this.wheels = wheels;
+    }
 
     public String getColor() {
         return color;
@@ -42,11 +54,22 @@ public class Vehicle {
         this.fuelCapacity = fuelCapacity;
     }
 
-    public ArrayList<Integer> getWheels() {
+    public ArrayList<Wheel> getWheels() {
         return wheels;
     }
 
-    public void setWheels(ArrayList<Integer> wheels) {
+    public void setWheels(ArrayList<Wheel> wheels) {
         this.wheels = wheels;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "color = '" + color + '\'' +
+                ", numberOfPassengers = " + numberOfPassengers +
+                ", cargoCapacity = " + cargoCapacity +
+                ", fuelCapacity = " + fuelCapacity +
+                ", wheels = " + wheels +
+                '}';
     }
 }
